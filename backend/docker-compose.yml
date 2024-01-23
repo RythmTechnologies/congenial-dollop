@@ -1,0 +1,21 @@
+version: '3.12'
+
+services:
+  djapp:
+    build: .
+    volumes:
+      - .:/home/congenial
+    ports:
+      - "8000:8000"
+    command: python manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - db
+
+  db:
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: postgres3
+      POSTGRES_USER: postgres3
+      POSTGRES_PASSWORD: postgres3

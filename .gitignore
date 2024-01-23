@@ -1,4 +1,13 @@
 # Python & Django #
+backend/data/
+backend/backend/static/
+backend/apps/**/migrations/**
+backend/apps/!**/migrations
+backend/apps/!**/migrations/__init__.py
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py
+**/.DS_Store
 *.log
 *.pot
 *.pyc

@@ -15,12 +15,17 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+from dotenv import load_dotenv
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-m4t-_3gc1e_hk(f=p!l91jfoo0xu#32p9wqax&+uglc$oly!@b'
+
+load_dotenv()
+
+
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -48,6 +53,7 @@ INSTALLED_APPS = [
     'apps.main',
     'apps.about',
     'apps.contact',
+    'apps.blog',
 ]
 
 MIDDLEWARE = [
@@ -62,14 +68,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'backend.urls'
-
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
-}
-
-
 
 
 TEMPLATES = [
@@ -95,9 +93,13 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "postgres3",
+        "USER": "postgres3",
+        "PASSWORD": "postgres3",
+        "HOST": "db",
+        "PORT": 5432,
     }
 }
 
