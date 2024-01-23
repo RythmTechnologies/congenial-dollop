@@ -1,8 +1,10 @@
-import WebLayout from "@/layouts/web/index";
-import About from "@/pages/about";
-import Contact from "@/pages/contact";
-import Home from "@/pages/home";
 import { createBrowserRouter } from "react-router-dom";
+import { lazy } from "react";
+
+const WebLayout = lazy(() => import("@/layouts/web/index"));
+const About = lazy(() => import("@/pages/about"));
+const Contact = lazy(() => import("@/pages/contact"));
+const Home = lazy(() => import("@/pages/home"));
 
 const routes = createBrowserRouter([
   {

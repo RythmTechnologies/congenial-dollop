@@ -1,24 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState, useLayoutEffect } from "react";
 
 export default function useColorScheme() {
+  const [colorScheme, setColorScheme] = useState("light");
 
-  const [colorScheme, setColorScheme] = useState('light')
-
-  useEffect(() => {
-
+  useLayoutEffect(() => {
     if (window.matchMedia) {
-      const colorSchemeQueryList = window.matchMedia('(prefers-color-scheme: dark)');
-      const changeHandler = (evt) => {
-        const newColorScheme = evt.matches ? 'dark' : 'light';
-        setColorScheme(newColorScheme)
-      };
-
-      colorSchemeQueryList.addEventListener('change', changeHandler);
-      changeHandler(colorSchemeQueryList);
+      const mediaQueryList = window.matchMedia("(prefers-color-scheme: dark)");
+      mediaQueryList.addEventListener("change", (e) => {
+        setColorScheme(e.matches ? "dark" : "light");
+      });
+      setColorScheme(mediaQueryList.matches ? "dark" : "light");
     }
+  }, []);
 
-  }, [])
-
-  return colorScheme
-
+  return colorScheme;
 }

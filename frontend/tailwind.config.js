@@ -2,20 +2,28 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{js,jsx}',
-    './components/**/*.{js,jsx}',
-    './app/**/*.{js,jsx}',
-    './src/**/*.{js,jsx}',
+    "./pages/**/*.{js,jsx}",
+    "./components/**/*.{js,jsx}",
+    "./app/**/*.{js,jsx}",
+    "./src/**/*.{js,jsx}",
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-
   ],
   prefix: "",
   theme: {
     container: {
+      // you can configure the container to be centered
       center: true,
-      padding: "2rem",
+
+      // or have default horizontal padding
+      padding: "1rem",
+
+      // default breakpoints but with 40px removed
       screens: {
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
         "2xl": "1400px",
       },
     },
@@ -74,7 +82,10 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      transitionDuration: {
+        default: "200ms",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};
