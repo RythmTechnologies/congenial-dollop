@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'apps.main',
     'apps.about',
     'apps.contact',
+    'apps.blog',
 ]
 
 MIDDLEWARE = [
@@ -67,14 +68,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'backend.urls'
-
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
-}
-
-
 
 
 TEMPLATES = [
@@ -102,9 +95,9 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "postgres2",
-        "USER": "postgres2",
-        "PASSWORD": "postgres",
+        "NAME": "postgres3",
+        "USER": "postgres3",
+        "PASSWORD": "postgres3",
         "HOST": "db",
         "PORT": 5432,
     }
