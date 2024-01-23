@@ -47,3 +47,4 @@ docker-compose up
 
 - All applications are inside the `Apps` folder.
 - The `static` folder was completely collectstatic.
+- Can be chill with our project
