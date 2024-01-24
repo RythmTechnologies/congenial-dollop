@@ -12,7 +12,7 @@ RedirectOrResponse = t.Union[HttpResponseRedirect, HttpResponse]
 
 
 #Projects All Start
-class Get_projects_all(APIView):
+class Get_all_projects(APIView):
     def get(self, request: HttpRequest) -> Response:
         queryset = Project.objects.all()
         serializers = ProjectsSerializers(queryset, many=True)

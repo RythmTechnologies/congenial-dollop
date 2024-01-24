@@ -12,7 +12,7 @@ RedirectOrResponse = t.Union[HttpResponseRedirect, HttpResponse]
 
 
 #Blog All Start
-class Get_blog_all(APIView):
+class Get_all_blog(APIView):
     def get(self, request: HttpRequest) -> Response:
         queryset = Blog.objects.all()
         serializers = BlogsSerializer(queryset, many=True)
