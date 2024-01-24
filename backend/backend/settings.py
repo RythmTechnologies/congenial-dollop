@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'drf_yasg',
     'corsheaders',
     'rest_framework',
+    'phonenumber_field',
 
     'apps.main',
     'apps.about',
@@ -104,6 +105,7 @@ DATABASES = {
         "PORT": 5432,
     }
 }
+
 
 
 # Password validation
