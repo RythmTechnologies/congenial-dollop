@@ -1,14 +1,7 @@
 from django.db import models
 from autoslug import AutoSlugField
+from apps.mixing.model import TimeBasedStampModel
 
-# TimeBasedStamp Model Start
-class TimeBasedStampModel(models.Model):
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        abstract = True
-# TimeBasedStamp Model End
 
 #Project Orm Start
 class Project(TimeBasedStampModel):
@@ -20,5 +13,9 @@ class Project(TimeBasedStampModel):
 
     def __str__(self) -> str:
         return self.name
+    
+    class Meta:
+        verbose_name = 'Proje'
+        verbose_name_plural = 'Projeler'
 #Project Orm End
 
