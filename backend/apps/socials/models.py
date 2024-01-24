@@ -1,5 +1,6 @@
 from django.db import models
 from apps.mixing.model import TimeBasedStampModel
+from autoslug import AutoSlugField
 
 """
 For Model; 
@@ -11,6 +12,7 @@ Can be get the TimeBasedStampModel
 class SocialMedia(TimeBasedStampModel):
     name = models.CharField(("Sosyal Medya Adı:"), max_length=50)
     url = models.URLField(("Url Adresi"), max_length=200)
+    slug = AutoSlugField(populate_from="name", editable=False, always_update=True, blank=True)
   
     def __str__(self) -> str:
       return self.name + " ("+self.url+")"
