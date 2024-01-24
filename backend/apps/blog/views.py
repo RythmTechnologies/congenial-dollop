@@ -4,11 +4,8 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from .models import *
 from .serializers import *
+from apps.mixing.views import RedirectOrResponse
 
-
-# Type Hint
-import typing as t
-RedirectOrResponse = t.Union[HttpResponseRedirect, HttpResponse]
 
 
 #Blog All Start

@@ -1,8 +1,8 @@
 from django.db import models
+from apps.main.mixin import TimeBasedStampModel
 
-# Create your models here.
-
-class Biography(models.Model):
+# Biography ORM Start
+class Biography(TimeBasedStampModel):
     date = models.DateField(verbose_name="Biografi Tarih", auto_now=False, auto_now_add=False)
     content = models.TextField(verbose_name="Biografi içerik")
 
@@ -12,4 +12,5 @@ class Biography(models.Model):
     class Meta:
         verbose_name = "Biografi"
         verbose_name_plural = "Biyografiler"
-    
+        
+# Biography ORM End

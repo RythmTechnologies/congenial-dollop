@@ -1,26 +1,17 @@
 from django.db import models
 from autoslug import AutoSlugField
-
-# TimeBasedStamp Model Start
-class TimeBasedStampModel(models.Model):
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        abstract = True
-# TimeBasedStamp Model End
-
-
+from apps.main.mixin import TimeBasedStampModel
 
 # LabelCategory ORM Start
 class LabelCategory(TimeBasedStampModel):
     name = models.CharField(("Label Name"), max_length=50)
 
-    class Meta:
-        verbose_name_plural = "Label Category"
-
     def __str__(self) -> str:
         return self.name
+    
+    class Meta:
+        verbose_name = 'Etiket'
+        verbose_name_plural = 'Etiketler'
 # LabelCategory ORM End
 
 
@@ -30,11 +21,13 @@ class CategoryBlog(TimeBasedStampModel):
     slug = AutoSlugField(
         populate_from="name", editable=False, always_update=True, blank=True
     )
-    class Meta:
-        verbose_name_plural = "Category Blog"
 
     def __str__(self) -> str:
         return self.name
+    
+    class Meta:
+        verbose_name = 'Blog Kategori'
+        verbose_name_plural = 'Blog Kategorileri'
 # CategoryBlog ORM End
 
 
@@ -58,9 +51,11 @@ class Blog(TimeBasedStampModel):
         populate_from="title", editable=False, always_update=True, blank=True
     )
 
-    class Meta:
-        verbose_name_plural = "Blog"
-
     def __str__(self) -> str:
         return self.title
+    
+    class Meta:
+        verbose_name = 'Blog'
+        verbose_name_plural = 'Bloglar'
+
 # Blog ORM End
