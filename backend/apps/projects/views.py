@@ -11,10 +11,10 @@ import typing as t
 RedirectOrResponse = t.Union[HttpResponseRedirect, HttpResponse]
 
 
-#Blog All Start
-class Get_all_blog(APIView):
+#Projects All Start
+class Get_all_projects(APIView):
     def get(self, request: HttpRequest) -> Response:
-        queryset = Blog.objects.all()
-        serializers = BlogsSerializer(queryset, many=True)
+        queryset = Project.objects.all()
+        serializers = ProjectsSerializers(queryset, many=True)
         return Response(serializers.data, status=status.HTTP_200_OK)
-#Blog All End
+#Projects All End
