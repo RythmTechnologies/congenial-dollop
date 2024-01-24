@@ -43,8 +43,11 @@ docker-compose up
 - Admin panel [127.0.0.1:8000/admin](127.0.0.1:8000/admin)
 - You can create what u want!
 
-# Working Space
+## 3. Check the our API'S
+- You should use a tool like Postman or Insomnia for check out the endpoints
+- `http://127.0.0.1:8000/swagger/` or `http://127.0.0.1:8000/redoc/` can be check the api's
 
+# Working Space
 - All applications are inside the `Apps` folder.
 - The `static` folder was completely collectstatic.
-- Can be chill with our project
+- Can be chill with our project 🚀
