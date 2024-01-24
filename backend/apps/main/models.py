@@ -1,5 +1,5 @@
 from django.db import models
-from apps.mixing.model import TimeBasedStampModel
+from apps.main.mixin import TimeBasedStampModel
 
 ## image biyografi iletişim Logo Footer 
 

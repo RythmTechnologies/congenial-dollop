@@ -1,6 +1,6 @@
 from django.db import models
-from apps.mixing.model import TimeBasedStampModel
 from autoslug import AutoSlugField
+from apps.main.mixin import TimeBasedStampModel
 
 """
 For Model; 

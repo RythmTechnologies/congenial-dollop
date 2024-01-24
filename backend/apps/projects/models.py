@@ -1,6 +1,6 @@
 from django.db import models
 from autoslug import AutoSlugField
-from apps.mixing.model import TimeBasedStampModel
+from apps.main.mixin import TimeBasedStampModel
 
 
 #Project Orm Start

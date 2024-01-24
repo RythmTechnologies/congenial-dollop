@@ -1,6 +1,6 @@
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
-from apps.mixing.model import TimeBasedStampModel
+from apps.main.mixin import TimeBasedStampModel
 
 # Contact ORM Start
 class Contact(TimeBasedStampModel):
