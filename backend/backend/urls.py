@@ -43,6 +43,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api-auth/", include("rest_framework.urls")),
     path("blog-api/", include("apps.blog.urls")),
+    path("projects-api/", include("apps.projects.urls")),
     path(
         "swagger/",
         schema_view.with_ui("swagger", cache_timeout=0),
