@@ -43,6 +43,8 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api-auth/", include("rest_framework.urls")),
     path("blog-api/", include("apps.blog.urls")),
+    path("about-api/", include("apps.about.urls")),
+    path("contact-api/", include("apps.contact.urls")),
     path("projects-api/", include("apps.projects.urls")),
     path(
         "swagger/",
