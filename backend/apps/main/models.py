@@ -1,4 +1,5 @@
 from django.db import models
+from tinymce.models import HTMLField
 from apps.main.mixin import TimeBasedStampModel
 
 ## image biyografi iletişim Logo Footer 
@@ -9,7 +10,7 @@ class MainBackground(TimeBasedStampModel):
     video = models.FileField(upload_to='videos/',blank=True)
 
     title = models.CharField(max_length=50,verbose_name="Anasayfa Başlık")
-    subtitle = models.TextField(verbose_name="Anasayfa Altbaşlık")
+    subtitle = HTMLField(verbose_name="Anasayfa Altbaşlık")
 
     def __str__(self) -> str:
         return self.title
