@@ -1,4 +1,5 @@
 from django.db import models
+from tinymce.models import HTMLField
 from autoslug import AutoSlugField
 from apps.main.mixin import TimeBasedStampModel
 
@@ -6,8 +7,8 @@ from apps.main.mixin import TimeBasedStampModel
 #Project Orm Start
 class Project(TimeBasedStampModel):
     name = models.CharField(("Proje Adı"), max_length=50)
-    description = models.TextField(("Proje Açıklaması"))
-    image = models.ImageField(("Proje Resmi"), upload_to="projects", height_field=None, width_field=None, max_length=None)
+    description = HTMLField(("Proje Açıklaması"))
+    image = models.ImageField(("Proje Resmi"), upload_to="projects")
     source = models.URLField(("Proje Url"), max_length=200, blank = True)
     slug = AutoSlugField(populate_from="name", editable=False, always_update=True, blank=True)
 

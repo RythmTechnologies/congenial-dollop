@@ -1,4 +1,5 @@
 from django.db import models
+from tinymce.models import HTMLField
 from autoslug import AutoSlugField
 from apps.main.mixin import TimeBasedStampModel
 
@@ -37,14 +38,11 @@ class Blog(TimeBasedStampModel):
         CategoryBlog, verbose_name=("Category"), on_delete=models.CASCADE
     )
     title = models.CharField(("Title"), max_length=200)
-    content = models.TextField(("Content"))
+    content = HTMLField(("Content"))
     label = models.ManyToManyField(LabelCategory, verbose_name=("Label's"))
     image = models.ImageField(
         ("Image"),
         upload_to="Blog",
-        height_field=None,
-        width_field=None,
-        max_length=None,
         blank=True,
     )
     slug = AutoSlugField(
