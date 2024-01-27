@@ -58,7 +58,8 @@ INSTALLED_APPS = [
     'apps.contact',
     'apps.blog',
     'apps.projects',
-    'apps.socials'
+    'apps.socials',
+    'apps.links'
 ]
 
 MIDDLEWARE = [

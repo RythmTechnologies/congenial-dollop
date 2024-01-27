@@ -28,12 +28,12 @@ from drf_yasg import openapi
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="Dostlar StartUp",
+        title="RythmTechnologies",
         default_version="v1",
-        description="Dostlar StartUp",
+        description="RythmTechnologies",
         terms_of_service="https://www.google.com/policies/terms/",
-        contact=openapi.Contact(email="contact@snippets.local"),
-        license=openapi.License(name="BSD License"),
+        contact=openapi.Contact(email="technologiesrythm@gmail.com"),
+        license=openapi.License(name="Mit License", url="https://github.com/RythmSoft-Co/congenial-dollop/blob/master/license"),
     ),
     public=True,
     permission_classes=(permissions.AllowAny,),
@@ -47,6 +47,7 @@ urlpatterns = [
     path("contact-api/", include("apps.contact.urls")),
     path("projects-api/", include("apps.projects.urls")),
     path("socials-api/", include("apps.socials.urls")),
+    path("links-api/", include("apps.links.urls")),
     path(
         "swagger/",
         schema_view.with_ui("swagger", cache_timeout=0),
