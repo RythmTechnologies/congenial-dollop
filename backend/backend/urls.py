@@ -48,6 +48,7 @@ urlpatterns = [
     path("projects-api/", include("apps.projects.urls")),
     path("socials-api/", include("apps.socials.urls")),
     path("links-api/", include("apps.links.urls")),
+    path("subs-links-api/", include("apps.subslinks.urls")),
     path("teams-api/", include("apps.team.urls")),
     path("testimonials-api/", include("apps.testimonials.urls")),
     path(
