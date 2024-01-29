@@ -48,6 +48,7 @@ urlpatterns = [
     path("projects-api/", include("apps.projects.urls")),
     path("socials-api/", include("apps.socials.urls")),
     path("links-api/", include("apps.links.urls")),
+    path("teams-api/", include("apps.team.urls")),
     path(
         "swagger/",
         schema_view.with_ui("swagger", cache_timeout=0),
