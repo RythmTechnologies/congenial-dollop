@@ -11,7 +11,7 @@ class Teams(TimeBasedStampModel):
     slug = AutoSlugField(populate_from="name", editable=False, always_update=True, blank=True)
   
     def __str__(self) -> str:
-      return self.name + " ("+self.url+")"
+      return self.name
     
     class Meta:
         verbose_name = 'Takım Üyesi'
