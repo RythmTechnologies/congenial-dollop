@@ -1,11 +1,13 @@
 from django.db import models
 from apps.main.mixin import TimeBasedStampModel
-
+from autoslug import AutoSlugField
+import uuid
 
 # Subs Link ORM Start
 class SubLinks(TimeBasedStampModel):
+  id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
   title = models.CharField(("Subs Link Adı"), max_length=150)
-  descriptions = models.CharField(("Subs Link Açıklama"), max_length=350)
+  description = models.CharField(("Subs Link Açıklama"), max_length=350)
   href = models.CharField(("Url"), max_length=150)
 
   class Meta:
