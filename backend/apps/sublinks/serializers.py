@@ -2,8 +2,8 @@ from rest_framework import serializers
 
 from .models import *
 
-class SubsLinksSerializers(serializers.ModelSerializer):
+class SubLinksSerializers(serializers.ModelSerializer):
 
     class Meta:
-        model = SubsLink
+        model = SubLinks
         fields = "__all__"

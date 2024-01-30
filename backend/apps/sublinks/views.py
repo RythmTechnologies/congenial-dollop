@@ -8,9 +8,9 @@ from .serializers import *
 
 
 #Subs Links All Start
-class Get_all_subs_links(APIView):
+class Get_all_sub_links(APIView):
     def get(self, request: HttpRequest) -> Response:
-        queryset = SubsLink.objects.all()
-        serializers = SubsLinksSerializers(queryset, many=True)
+        queryset = SubLinks.objects.all()
+        serializers = SubLinksSerializers(queryset, many=True)
         return Response(serializers.data, status=status.HTTP_200_OK)
 #Subs Links All End
