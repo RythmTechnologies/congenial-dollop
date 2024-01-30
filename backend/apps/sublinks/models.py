@@ -3,7 +3,7 @@ from apps.main.mixin import TimeBasedStampModel
 
 
 # Subs Link ORM Start
-class SubsLink(TimeBasedStampModel):
+class SubLinks(TimeBasedStampModel):
   title = models.CharField(("Subs Link Adı"), max_length=150)
   descriptions = models.CharField(("Subs Link Açıklama"), max_length=350)
   href = models.CharField(("Url"), max_length=150)

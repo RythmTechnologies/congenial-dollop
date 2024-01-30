@@ -14,15 +14,15 @@ class LinksSerializers(serializers.ModelSerializer):
     def to_representation(self, instance):
         representation = super(LinksSerializers, self).to_representation(instance)
 
-        subslink_representation = [
+        sublinks_representation = [
             {
-                'id': subslink.id,
-                'title': subslink.title,
-                'descriptions': subslink.descriptions,
-                'href': subslink.href
-            } for subslink in instance.subslink.all()
+                'id': sub_links.id,
+                'title': sub_links.title,
+                'descriptions': sub_links.descriptions,
+                'href': sub_links.href
+            } for sub_links in instance.sub_links.all()
         ]
 
-        representation['subslink'] = subslink_representation
+        representation['sub_links'] = sublinks_representation
 
         return representation

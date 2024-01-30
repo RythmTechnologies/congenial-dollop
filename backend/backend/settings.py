@@ -62,7 +62,7 @@ INSTALLED_APPS = [
     'apps.links',
     'apps.team',
     'apps.testimonials',
-    'apps.subslinks'
+    'apps.sublinks'
 ]
 
 MIDDLEWARE = [
