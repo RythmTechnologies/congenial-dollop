@@ -1,7 +1,7 @@
 import { useState, useLayoutEffect } from "react";
 
 export default function useColorScheme() {
-  const [colorScheme, setColorScheme] = useState("light");
+  const [colorScheme, setColorScheme] = useState("dark");
 
   useLayoutEffect(() => {
     if (window.matchMedia) {

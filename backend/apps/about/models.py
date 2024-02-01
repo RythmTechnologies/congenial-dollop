@@ -4,6 +4,7 @@ from apps.main.mixin import TimeBasedStampModel
 
 # Biography ORM Start
 class Biography(TimeBasedStampModel):
+    name = models.CharField(verbose_name="Biografi Adı", max_length=50)
     date = models.DateField(verbose_name="Biografi Tarih", auto_now=False, auto_now_add=False)
     content = HTMLField(verbose_name="Biografi içerik")
 
