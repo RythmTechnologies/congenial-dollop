@@ -1,7 +1,7 @@
 {
   "builds": [{
     "src": "backend/wsgi.py",
-    "use": "@vercel/python",
+    "use": "@vercel/python3.9",
     "config": {
       "maxLambdaSize": "15mb",
       "runtime": "python3.9"
@@ -12,8 +12,5 @@
       "src": "/(.*)",
       "dest": "backend/wsgi.py"
     }
-  ],
-  "env": {
-    "DJANGO_SETTINGS_MODULE": "backend.settings"
-  }
+  ]
 }
