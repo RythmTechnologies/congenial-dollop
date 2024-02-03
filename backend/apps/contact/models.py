@@ -7,6 +7,8 @@ class Contact(TimeBasedStampModel):
     name = models.CharField(max_length=100)
     email = models.EmailField()
     phone = PhoneNumberField(blank=True,region='TR')
+    message = models.TextField()
+    
     
     def __str__(self) -> str:
         return self.name

@@ -8,6 +8,7 @@ WORKDIR /home/congenial
 
 COPY requirements.txt /home/congenial
 
+RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 COPY . .

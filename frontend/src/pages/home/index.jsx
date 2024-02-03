@@ -1,9 +1,13 @@
-import { Button } from "@/components/ui/button";
+import Projects from "@/components/projects";
+import Marquee from "@/components/marquee";
+import About from "../about";
 
 export default function Home() {
   return (
-    <>
-      <div>home</div>
-    </>
+    <div>
+      <About />
+      <Marquee />
+      <Projects />
+    </div>
   );
 }
