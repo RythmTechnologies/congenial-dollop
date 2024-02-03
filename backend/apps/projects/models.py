@@ -1,3 +1,4 @@
+from autoslug import AutoSlugField
 from django.db import models
 from tinymce.models import HTMLField
 from autoslug import AutoSlugField
@@ -35,5 +36,8 @@ class Project(TimeBasedStampModel):
         return self.name
 
     class Meta:
-        verbose_name = 'Proje'
-        verbose_name_plural = 'Projeler'
+        verbose_name = "Proje"
+        verbose_name_plural = "Projeler"
+
+
+# Project Orm End
