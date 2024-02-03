@@ -1,5 +1,10 @@
 #!/bin/bash
 
+
+# Create environment
+python3.9 -m venv venv
+source venv/bin/activate 
+
 # Build the project
 echo "Building the project..."
 python3.9 -m pip install --upgrade pip
