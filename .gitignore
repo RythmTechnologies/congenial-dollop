@@ -1,6 +1,7 @@
 # Python & Django #
 backend/data/
 backend/static/
+backend/staticfiles/
 backend/backend/static/
 backend/apps/**/migrations/**
 backend/apps/!**/migrations
