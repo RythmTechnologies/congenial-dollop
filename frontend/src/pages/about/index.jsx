@@ -1,31 +1,29 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Heading } from "@/components/ui/heading";
+import { Skeleton } from "@/components/ui/skeleton";
+import { getAbout } from "@/api";
 
 export default function About() {
-  async function getAbout() {
-    const response = await fetch("http://0.0.0.0:8000/about-api/biography");
-    const data = response.json();
-    return data;
-  }
-  const queryClient = useQueryClient();
-
   const { data, error, isLoading } = useQuery({
     queryKey: ["about"],
     queryFn: getAbout,
   });
   if (isLoading) {
-    return <span>Loading...</span>;
+    return (
+      <div className="px-4 pb-4 flex flex-col gap-y-4 w-full">
+        <Skeleton className="w-2/5 sm:w-1/4 h-10 mb-4 bg-muted" />
+        <Skeleton className="w-full h-[140px] sm:h-[92px] bg-muted" />
+        <Skeleton className="w-full h-[280px] sm:h-[220px] bg-muted" />
+      </div>
+    );
   }
 
   if (error) {
@@ -33,21 +31,21 @@ export default function About() {
   }
 
   return (
-    <div className="flex-1">
-      <Heading level="h1" className="mb-4 px-4">
-        About Us
+    <section className="flex-1 py-4">
+      <Heading level="h2" className="mb-4 px-4">
+        About us
       </Heading>
-      <main>
+      <div>
         <TabsDemo data={data} />
-      </main>
-    </div>
+      </div>
+    </section>
   );
 }
 
 export function TabsDemo({ data }) {
   return (
-    <Tabs defaultValue={data[0].name} className="px-4 py-4">
-      <TabsList className="h-auto w-full grid md:flex grid-cols-1 sm:grid-cols-2 overflow-hidden">
+    <Tabs defaultValue={data[0]?.name} className="px-4 py-4">
+      <TabsList className="h-auto w-full grid grid-cols-1 sm:grid-cols-2 overflow-hidden">
         {data.map((about) => (
           <TabsTrigger
             key={about.id}
@@ -65,13 +63,11 @@ export function TabsDemo({ data }) {
           className="transition-all mt-4"
         >
           <Card>
-            <CardHeader>
-              <CardTitle>Account</CardTitle>
-              <CardDescription>
-                Make changes to your account here. Click save when you're done.
-              </CardDescription>
+            <CardHeader className="border-b border-border p-4">
+              <CardTitle>Rythm Technologies</CardTitle>
+              <CardDescription>{about.date}</CardDescription>
             </CardHeader>
-            <CardContent>
+            <CardContent className="p-4">
               <div dangerouslySetInnerHTML={{ __html: about.content }} />
             </CardContent>
           </Card>

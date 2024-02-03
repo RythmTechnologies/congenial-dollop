@@ -145,7 +145,6 @@ export default function Navbar() {
     ));
   }
   function DropDownLinks({ dropDownLinks }) {
-    console.log(dropDownLinks);
     return (
       <>
         {dropDownLinks.map((navlink) => (

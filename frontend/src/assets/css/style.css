@@ -10,6 +10,11 @@ body {
     @apply transition-colors duration-default
 }
 
+.marquee-mask {
+    @apply relative;
+    mask-image: linear-gradient(to right, transparent, hsl(var(--background)) 20%, hsl(var(--background)) 80%, transparent);
+}
+
 
 @layer base {
     :root {

@@ -1,3 +1,7 @@
+import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
+import { Heading } from "./ui/heading";
+
 const projects = [
   {
     id: 1,
@@ -27,19 +31,15 @@ const projects = [
     image: "https://s.tmimgcdn.com/scr/351400/351409-original.png",
     source: "href",
   },
-  {
-    id: 5,
-    name: "Tavsanli deneme debneme",
-    description: "deneme deneme",
-    image: "https://s.tmimgcdn.com/scr/351400/351409-original.png",
-    source: "href",
-  },
 ];
 
-export default function Projects() {
+export default function ProjectsSection() {
   return (
-    <article>
-      <div className="grid grid-cols-1 md:grid-cols-2">
+    <section className="py-4">
+      <Heading level="h2" className="mb-4 px-4">
+        See our latest projects
+      </Heading>
+      <article className="grid grid-cols-1 md:grid-cols-2">
         {projects.map((project) => (
           <div key={project.id} className="p-4 flex flex-col gap-2">
             <a
@@ -52,12 +52,18 @@ export default function Projects() {
                 alt=""
               />
             </a>
-            <p className="text-center font-bold text-foreground">
+            <p className=" sm:text-center font-bold text-foreground">
               {project.name}
             </p>
           </div>
         ))}
-      </div>
-    </article>
+        <Link
+          to="/projects"
+          className="col-span-full flex items-center sm:justify-center py-4 px-4"
+        >
+          <Button className="w-auto">See all projects</Button>
+        </Link>
+      </article>
+    </section>
   );
 }
