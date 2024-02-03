@@ -45,11 +45,11 @@ const routes = createBrowserRouter([
         path: "/projects/:slug",
         element: <ProjectDetail />,
       },
+      {
+        path: "*",
+        element: <NotFound />,
+      },
     ],
-  },
-  {
-    path: "*",
-    element: <NotFound />,
   },
 ]);
 

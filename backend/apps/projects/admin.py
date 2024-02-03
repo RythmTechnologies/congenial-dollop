@@ -1,5 +1,16 @@
 from django.contrib import admin
-from .models import *
+from .models import Project
 
-# Register your models here.
-admin.site.register(Project)
+class ProjectAdmin(admin.ModelAdmin):
+    # Admin panelinde listelenen sütunlar
+    list_display = ('slug','name', 'source', 'created_at', 'updated_at')
+    list_editable = ('name', 'source',)
+    # Arama çubuğu ile arama yapılacak alanlar
+    search_fields = ['name', 'description']
+    
+    # Filtreleme seçenekleri
+    list_filter = ('created_at', 'updated_at')
+    
+    readonly_fields = ('slug',)
+
+admin.site.register(Project, ProjectAdmin)
