@@ -2,7 +2,9 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import * as path from "path";
 
-const isProd = import.meta.env.VITE_NODE_ENV === "production";
+// const isProd = import.meta.env.VITE_NODE_ENV
+//   ? import.meta.env.VITE_NODE_ENV === "production"
+//   : false;
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -13,7 +15,7 @@ export default defineConfig({
     },
   },
   build: {
-    minify: isProd,
+    minify: true,
     manifest: true,
     rollupOptions: {
       input: ["index.html"],
@@ -23,5 +25,8 @@ export default defineConfig({
         assetFileNames: `assets/[name].[hash].[ext]`,
       },
     },
+  },
+  define: {
+    __APP_ENV__: process.env.VITE_VERCEL_ENV,
   },
 });

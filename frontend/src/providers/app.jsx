@@ -36,9 +36,6 @@ export default function AppProvider() {
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <HelmetProvider>
           <QueryClientProvider client={queryClient} contextSharing={true}>
-            {import.meta.env.VITE_NODE_ENV === "development" && (
-              <ReactQueryDevtools />
-            )}
             <ReduxProvider store={store}>
               <RouterProvider router={routes} />
             </ReduxProvider>
