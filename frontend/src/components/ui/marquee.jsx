@@ -4,10 +4,9 @@ import { cn } from "@/lib/utils";
 
 const Marquee = React.forwardRef(
   ({ className, speed = 1, direction = "left", children }, ref) => {
-    const marqueeRef = React.useRef(null); // Marquee için iç ref
-    const contentRef = React.useRef(null); // İçerik için iç ref
+    const marqueeRef = React.useRef(null);
+    const contentRef = React.useRef(null);
 
-    // Komponent içindeki ref'leri ve dışarıdan gelen ref'i birleştir
     React.useEffect(() => {
       if (ref) {
         ref.current = marqueeRef.current;

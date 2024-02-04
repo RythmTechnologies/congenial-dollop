@@ -56,13 +56,12 @@ export default function Subscribe() {
   }
 
   return (
-    <div className="flex-1">
+    <div className="flex-1 py-4">
       <h1 className="scroll-m-20 text-3xl font-bold tracking-tight mb-4 px-4">
         Contact Us
       </h1>
-      <section></section>
       <main className="">
-        <div className="px-4 py-4">
+        <div className=" px-4 sm:px-0 sm:py-4">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
               <FormField

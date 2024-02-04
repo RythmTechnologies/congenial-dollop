@@ -1,6 +1,9 @@
 # Python & Django #
 backend/data/
+backend/static/
 backend/backend/static/
+backend/staticfiles_build/
+backend/staticfiles_build/static/
 backend/apps/**/migrations/**
 backend/apps/!**/migrations
 backend/apps/!**/migrations/__init__.py

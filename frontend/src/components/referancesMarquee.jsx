@@ -1,4 +1,4 @@
-import Marquee from "./marquee";
+import Marquee from "./ui/marquee";
 
 const referances = [
   {
