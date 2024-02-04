@@ -1,7 +1,6 @@
-import ProjectsSection from "@/components/ProjectsSection";
-import Marquee from "@/components/ui/marquee";
 import ReferancesMarquee from "@/components/ReferancesMarquee";
 import AboutSection from "@/components/AboutSection";
+import ProjectsSection from "@/components/ProjectsSection";
 
 export default function Home() {
   return (
