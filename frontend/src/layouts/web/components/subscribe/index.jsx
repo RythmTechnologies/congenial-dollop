@@ -42,7 +42,6 @@ export default function Subscribe() {
   function onSubmit(values) {
     setTimeout(() => {
       form.reset();
-      console.log(values);
     }, 2000);
   }
 

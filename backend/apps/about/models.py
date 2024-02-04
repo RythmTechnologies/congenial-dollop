@@ -14,5 +14,7 @@ class Biography(TimeBasedStampModel):
     class Meta:
         verbose_name = "Biografi"
         verbose_name_plural = "Biyografiler"
+        ordering = ('id', )
+
         
 # Biography ORM End

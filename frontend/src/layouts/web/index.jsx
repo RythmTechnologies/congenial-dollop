@@ -25,7 +25,7 @@ export default function WebLayout() {
       <Header />
       <main className="flex-1 flex flex-col">
         {location.pathname === "/" && <HeroSection />}
-        <div className="flex-1 container py-4 md:px-0 mx-auto sm:mx-auto border-x border-border/40 max-w-2xl">
+        <div className="flex-1 container py-4 md:py-0 md:px-0 mx-auto sm:mx-auto border-x border-border/40 max-w-2xl">
           <Outlet />
         </div>
       </main>
