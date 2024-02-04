@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 
-import ProjecstSection from "@/components/projectsSection";
+import ProjecstSection from "@/components/ProjectsSection";
 import { Heading } from "@/components/ui/heading";
 export default function Projects() {
   return (
