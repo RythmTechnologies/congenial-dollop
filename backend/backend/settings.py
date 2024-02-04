@@ -97,7 +97,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'backend.wsgi.apps'
+WSGI_APPLICATION = 'backend.wsgi.app'
 
 
 # Database
@@ -106,10 +106,10 @@ WSGI_APPLICATION = 'backend.wsgi.apps'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.getenv("POSTGRES_DATABASE"),
-        "USER": os.getenv("POSTGRES_USER"),
-        "PASSWORD": os.getenv("POSTGRES_PASSWORD"),
-        "HOST": os.getenv("POSTGRES_HOST"),
+        "NAME": "verceldb",
+        "USER": "default",
+        "PASSWORD": "85tzZUamxvTD",
+        "HOST": "ep-billowing-pond-a2xunt4f-pooler.eu-central-1.postgres.vercel-storage.com",
         "PORT": 5432,
     }
 }
