@@ -31,6 +31,13 @@ const projects = [
     image: "https://s.tmimgcdn.com/scr/351400/351409-original.png",
     source: "href",
   },
+  {
+    id: 5,
+    name: "Tavsanli deneme last",
+    description: "deneme deneme",
+    image: "https://s.tmimgcdn.com/scr/351400/351409-original.png",
+    source: "href",
+  },
 ];
 
 export default function ProjectsSection() {
