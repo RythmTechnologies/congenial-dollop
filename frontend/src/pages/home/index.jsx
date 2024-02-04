@@ -1,6 +1,6 @@
-import ReferancesMarquee from "@/components/ReferancesMarquee";
 import AboutSection from "@/components/AboutSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import ReferancesMarquee from "@/components/referancesMarquee";
 
 export default function Home() {
   return (
