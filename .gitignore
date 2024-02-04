@@ -1,6 +1,5 @@
 # Python & Django #
 backend/data/
-backend/static/
 backend/backend/static/
 backend/apps/**/migrations/**
 backend/apps/!**/migrations
@@ -19,8 +18,8 @@ media
 !/migrations
 !/migrations/__init__.py
 *.bak
-*.py[cod] 
-*$py.class 
+*.py[cod]
+*$py.class
 .env
 .venv
 env/
