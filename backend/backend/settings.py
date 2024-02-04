@@ -35,7 +35,10 @@ ALLOWED_HOSTS = [".vercel.app", ".now.sh"]
 CORS_ALLOWED_ORIGINS = [
     "https://rythmtechnologies.com/",
     "http://rythmtechnologies.com/",
-    "www.rythmtechnologies.com/"
+    "www.rythmtechnologies.com/",
+    "https://rythm-official-front.vercel.app/",
+    "http://rythm-official-front.vercel.app/",
+    "www.rythm-official-front.vercel.app/"
 ]
 
 # Application definition
