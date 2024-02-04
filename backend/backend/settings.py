@@ -30,14 +30,12 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://rythmtech.pythonanywhere.com', '*']
-
+ALLOWED_HOSTS = [".vercel.app", ".now.sh"]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://localhost:5173",
-    "http://127.0.0.1:8000",
-    "http://127.0.0.1:5173",
+    "https://rythmtechnologies.com/",
+    "http://rythmtechnologies.com/",
+    "www.rythmtechnologies.com/"
 ]
 
 # Application definition
@@ -98,7 +96,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'backend.wsgi.app'
+WSGI_APPLICATION = 'backend.wsgi.application'
 
 
 # Database
@@ -107,10 +105,10 @@ WSGI_APPLICATION = 'backend.wsgi.app'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "postgres",
-        "USER": "postgres3",
-        "PASSWORD": "postgres3",
-        "HOST": "db",
+        "NAME": os.getenv("POSTGRES_DATABASE"),
+        "USER": os.getenv("POSTGRES_USER"),
+        "PASSWORD": os.getenv("POSTGRES_PASSWORD"),
+        "HOST": os.getenv("POSTGRES_HOST"),
         "PORT": 5432,
     }
 }
@@ -138,7 +136,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'tr-TR'
+LANGUAGE_CODE = 'tr'
 
 TIME_ZONE = 'Europe/Istanbul'
 
@@ -146,15 +144,12 @@ USE_I18N = True
 
 USE_TZ = True
 
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+STATIC_URL = "static/"
+STATICFILES_DIRS = os.path.join(BASE_DIR, "static"),
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles_build","static")
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_URL = 'static/'
-
-
 
 
 # Default primary key field type
