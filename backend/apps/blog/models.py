@@ -2,6 +2,7 @@ from django.db import models
 from tinymce.models import HTMLField
 from autoslug import AutoSlugField
 from apps.main.mixin import TimeBasedStampModel
+from apps.main.mixin import MyS3Storage
 
 # LabelCategory ORM Start
 class LabelCategory(TimeBasedStampModel):
@@ -9,7 +10,7 @@ class LabelCategory(TimeBasedStampModel):
 
     def __str__(self) -> str:
         return self.name
-    
+
     class Meta:
         verbose_name = 'Etiket'
         verbose_name_plural = 'Etiketler'
@@ -25,7 +26,7 @@ class CategoryBlog(TimeBasedStampModel):
 
     def __str__(self) -> str:
         return self.name
-    
+
     class Meta:
         verbose_name = 'Blog Kategori'
         verbose_name_plural = 'Blog Kategorileri'
@@ -43,6 +44,7 @@ class Blog(TimeBasedStampModel):
     image = models.ImageField(
         ("Image"),
         upload_to="Blog",
+        storage=MyS3Storage(),
         blank=True,
     )
     slug = AutoSlugField(
@@ -51,7 +53,7 @@ class Blog(TimeBasedStampModel):
 
     def __str__(self) -> str:
         return self.title
-    
+
     class Meta:
         verbose_name = 'Blog'
         verbose_name_plural = 'Bloglar'
