@@ -15,3 +15,4 @@ class TimeBasedStampModel(models.Model):
 class MyS3Storage(S3Boto3Storage):
     location = 'media/'  # S3'te dosyaların saklanacağı alt dizin
     file_overwrite = False  # Aynı isimde dosya varsa üzerine yazmaz
+    default_acl = 'public-read'
