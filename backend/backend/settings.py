@@ -66,7 +66,8 @@ INSTALLED_APPS = [
     'apps.links',
     'apps.team',
     'apps.testimonials',
-    'apps.sublinks'
+    'apps.sublinks',
+    'storages'
 ]
 
 MIDDLEWARE = [

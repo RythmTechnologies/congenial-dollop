@@ -1,9 +1,7 @@
+echo "Pip Güncelleniyor"
 pip install --upgrade pip
+
+echo "requirements kuruluyor..."
 pip install -r requirements.txt
-
-echo "Migrate işlemleri başlatılıyor..."
-
-python manage.py makemigrations
-python manage.py migrate
 
 echo "Tamamlandı"
