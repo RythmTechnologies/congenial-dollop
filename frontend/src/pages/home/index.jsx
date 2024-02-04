@@ -1,7 +1,6 @@
-import ProjectsSection from "@/components/ProjectsSection";
-import Marquee from "@/components/ui/marquee";
-import ReferancesMarquee from "@/components/ReferancesMarquee";
 import AboutSection from "@/components/AboutSection";
+import ProjectsSection from "@/components/ProjectsSection";
+import TestimonialsMarquee from "@/components/TestimonialsMarquee";
 
 export default function Home() {
   return (
@@ -9,7 +8,7 @@ export default function Home() {
       <AboutSection />
       <ProjectsSection />
       <section className="py-4 border-y border-border">
-        <ReferancesMarquee />
+        <TestimonialsMarquee />
       </section>
     </main>
   );
