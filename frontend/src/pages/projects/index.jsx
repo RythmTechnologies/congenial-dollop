@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
+import ProjectsSection from "@/components/ProjectsSection";
 
-import ProjecstSection from "@/components/ProjectsSection";
 import { Heading } from "@/components/ui/heading";
 export default function Projects() {
   return (
@@ -11,7 +11,7 @@ export default function Projects() {
       >
         Projects
       </Heading>
-      <ProjecstSection />
+      <ProjectsSection />
       <Outlet />
     </>
   );
