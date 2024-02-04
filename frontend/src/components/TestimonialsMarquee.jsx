@@ -7,7 +7,7 @@ const referances = [
   },
 ];
 
-export default function ReferancesMarquee() {
+export default function TestimonialsMarquee() {
   return (
     <div>
       <Marquee speed={0.5} direction="left">
