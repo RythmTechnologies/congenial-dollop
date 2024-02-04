@@ -33,10 +33,9 @@ DEBUG = True
 ALLOWED_HOSTS = [".vercel.app", ".now.sh"]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://localhost:5173",
-    "http://127.0.0.1:8000",
-    "http://127.0.0.1:5173",
+    "https://rythmtechnologies.com/",
+    "http://rythmtechnologies.com/",
+    "www.rythmtechnologies.com/"
 ]
 
 # Application definition
@@ -106,10 +105,10 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "verceldb",
-        "USER": "default",
-        "PASSWORD": "85tzZUamxvTD",
-        "HOST": "ep-billowing-pond-a2xunt4f-pooler.eu-central-1.postgres.vercel-storage.com",
+        "NAME": os.getenv("POSTGRES_DATABASE"),
+        "USER": os.getenv("POSTGRES_USER"),
+        "PASSWORD": os.getenv("POSTGRES_PASSWORD"),
+        "HOST": os.getenv("POSTGRES_HOST"),
         "PORT": 5432,
     }
 }
