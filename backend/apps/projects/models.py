@@ -23,6 +23,21 @@ def custom_slugify(value):
     # Django'nun slugify fonksiyonunu kullanarak slug oluşturun
     return django_slugify(value)
 
+
+# Project Technologies ORM Start
+class Technologies(TimeBasedStampModel):
+    name = models.CharField(("Teknoloji Adı"), max_length=50)
+
+    class Meta:
+        verbose_name = "Teknoloji"
+        verbose_name_plural = "Teknolojiler"
+
+    def __str__(self) -> str:
+        return self.name
+
+# Project Technologies ORM End
+
+
 # Project Orm Start
 class Project(TimeBasedStampModel):
     id = models.UUIDField(primary_key=True, default=uuid.uuid1, editable=False)
@@ -30,6 +45,7 @@ class Project(TimeBasedStampModel):
     description = HTMLField(("Proje Açıklaması"))
     image = models.ImageField(("Proje Resmi"), storage=MyS3Storage() ,upload_to="projects")
     source = models.URLField(("Proje Url"), max_length=200, blank=True)
+    technologies = models.ManyToManyField(Technologies, verbose_name=("Kullanılan Teknolojiler"))
     slug = AutoSlugField(populate_from="name", unique=True, editable=False, always_update=True, blank=True, slugify=custom_slugify)
 
 

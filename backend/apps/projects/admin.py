@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Project
+from .models import Project,Technologies
 
 class ProjectAdmin(admin.ModelAdmin):
     # Admin panelinde listelenen sütunlar
@@ -7,10 +7,11 @@ class ProjectAdmin(admin.ModelAdmin):
     list_editable = ('name', 'source',)
     # Arama çubuğu ile arama yapılacak alanlar
     search_fields = ['name', 'description']
-    
+
     # Filtreleme seçenekleri
     list_filter = ('created_at', 'updated_at')
-    
+
     readonly_fields = ('slug',)
 
 admin.site.register(Project, ProjectAdmin)
+admin.site.register(Technologies)
