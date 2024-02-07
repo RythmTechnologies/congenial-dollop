@@ -27,15 +27,18 @@ export default function AboutSection() {
   }
 
   if (error) {
-    return <span>Error: {error.message}</span>;
+    return <div className="p-4">Error: {error.message}</div>;
   }
 
   return (
-    <section className="flex-1 py-4">
-      <Heading level="h2" className="mb-4 px-4">
-        About us
+    <section className="flex-1 p-4 border-b border-border/40">
+      <Heading level="h2" className="flex flex-wrap gap-x-4 mb-4">
+        Kısaca{" "}
+        <div className="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">
+          Rythm<span className="text-muted-foreground">Technologies</span>
+        </div>
       </Heading>
-      <div>
+      <div className="py-4">
         <TabsAbout data={data} />
       </div>
     </section>
@@ -44,9 +47,9 @@ export default function AboutSection() {
 
 function TabsAbout({ data }) {
   return (
-    <Tabs defaultValue={data[0]?.name} className="px-4 py-4">
-      <TabsList className="h-auto w-full grid grid-cols-1 sm:grid-cols-2 overflow-hidden">
-        {data.map((about) => (
+    <Tabs defaultValue={data[0]?.name}>
+      <TabsList className="h-auto w-full grid grid-cols-1 xs:grid-cols-2  md:flex overflow-hidden">
+        {data.map((about, key) => (
           <TabsTrigger
             key={about.id}
             className="px-2 flex-1 transition-opacity justify-start md:justify-center"
@@ -63,7 +66,7 @@ function TabsAbout({ data }) {
           className="transition-all mt-4"
         >
           <Card>
-            <CardHeader className="border-b border-border p-4">
+            <CardHeader className="border-b border-border/40 p-4">
               <CardTitle>Rythm Technologies</CardTitle>
               <CardDescription>{about.date}</CardDescription>
             </CardHeader>
