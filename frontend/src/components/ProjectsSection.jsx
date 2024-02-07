@@ -1,74 +1,108 @@
+import { useRef } from "react";
+
 import { Button } from "./ui/button";
-import { Link } from "react-router-dom";
+import { Spinner } from "./spinner";
 import { Heading } from "./ui/heading";
 
-const projects = [
-  {
-    id: 1,
-    name: "Tavsanli",
-    description: "deneme deneme",
-    image: "https://s.tmimgcdn.com/scr/351400/351409-original.png",
-    source: "href",
-  },
-  {
-    id: 2,
-    name: "Tavsanli",
-    description: "deneme deneme",
-    image: "https://s.tmimgcdn.com/scr/351400/351409-original.png",
-    source: "href",
-  },
-  {
-    id: 3,
-    name: "Tavsanli",
-    description: "deneme deneme",
-    image: "https://s.tmimgcdn.com/scr/351400/351409-original.png",
-    source: "href",
-  },
-  {
-    id: 4,
-    name: "Tavsanli deneme debneme",
-    description: "deneme deneme",
-    image: "https://s.tmimgcdn.com/scr/351400/351409-original.png",
-    source: "href",
-  },
-  {
-    id: 5,
-    name: "Tavsanli deneme last",
-    description: "deneme deneme",
-    image: "https://s.tmimgcdn.com/scr/351400/351409-original.png",
-    source: "href",
-  },
-];
+import { Link } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import { getProjects } from "@/api";
+
+import Autoplay from "embla-carousel-autoplay";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export default function ProjectsSection() {
+  const {
+    data: projects,
+    error,
+    isLoading,
+    refetch,
+  } = useQuery({
+    queryKey: ["projects"],
+    queryFn: getProjects,
+  });
+
+  const plugin = useRef(Autoplay({ delay: 2500, stopOnInteraction: true }));
+
+  if (isLoading) {
+    return (
+      <div className="px-4 flex flex-col gap-y-4 w-full">
+        <div className="h-40 flex items-center justify-center">
+          <Spinner />
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <Button onClick={refetch} variant="outline">
+        Oops! Try again!
+      </Button>
+    );
+  }
+
   return (
-    <section className="py-4">
-      <Heading level="h2" className="mb-4 px-4">
-        See our latest projects
+    <section className="flex-1 p-4 w-full">
+      <Heading level="h2" className="mb-4">
+        En son projelerimize göz atın
       </Heading>
-      <article className="grid grid-cols-1 md:grid-cols-2">
-        {projects.map((project) => (
-          <div key={project.id} className="p-4 flex flex-col gap-2">
-            <a
-              href="/projects/tavsanli"
-              className=" rounded-lg h-40 overflow-hidden border-2  "
-            >
-              <img
-                className="h-full w-full object-cover rounded"
-                src={project.image}
-                alt=""
-              />
-            </a>
-            <p className=" sm:text-center font-bold text-foreground">
-              {project.name}
-            </p>
-          </div>
-        ))}
-        <Link
-          to="/projects"
-          className="col-span-full flex items-center sm:justify-center py-4 px-4"
+      <article className="py-4">
+        <Carousel
+          plugins={[plugin.current]}
+          className="w-full mb-14 md:mb-16 "
+          opts={{
+            align: "start",
+          }}
+          onMouseEnter={plugin.current.stop}
+          onMouseLeave={plugin.current.reset}
         >
-          <Button className="w-auto">See all projects</Button>
+          <CarouselContent>
+            {projects?.map((project, index) => (
+              <CarouselItem
+                key={index}
+                className=" sm:basis-1/2 min-h-full flex-grow"
+              >
+                <div className="p-1 h-full">
+                  <div
+                    key={project.id}
+                    className="flex flex-col gap-2 w-full h-full"
+                  >
+                    <Link
+                      to={"/projeler/" + project.slug}
+                      className="h-40 xs:h-52 sm:h-44 md:h-52 flex-1 rounded-lg overflow-hidden border-2"
+                    >
+                      <img
+                        className="h-full w-full object-center object-contain rounded"
+                        src={project.image}
+                        alt={project.name}
+                      />
+                    </Link>
+                    <p className=" sm:text-center font-bold text-foreground">
+                      {project.name}
+                    </p>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className=" !top-[calc(100%+1.5rem)] !left-[calc(50%-4rem)]" />
+          <CarouselNext className=" !top-[calc(100%+1.5rem)] !right-[calc(50%-4rem)]" />
+        </Carousel>
+
+        <Link
+          to="/projeler"
+          className="col-span-full flex items-center xs:justify-center sm:p-4"
+        >
+          <Button className="w-full xs:w-1/2 md:w-auto">
+            Tüm projeleri gör
+          </Button>
         </Link>
       </article>
     </section>
