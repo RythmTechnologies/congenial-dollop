@@ -1,5 +1,4 @@
 import * as React from "react";
-
 import { cn } from "@/lib/utils";
 
 const Marquee = React.forwardRef(
@@ -18,6 +17,10 @@ const Marquee = React.forwardRef(
       const content = contentRef.current;
       if (!marquee || !content) return;
 
+      // İçeriğin klonunu oluştur
+      const clonedContent = content.cloneNode(true);
+      content.appendChild(clonedContent); // Klonu orijinal içeriğin sonuna ekle
+
       let animationFrameId;
       let currentPosition = 0;
 
@@ -27,16 +30,14 @@ const Marquee = React.forwardRef(
         currentPosition += updatePosition;
         content.style.transform = `translateX(${currentPosition}px)`;
 
-        const contentWidth = content.offsetWidth;
+        const contentWidth = content.offsetWidth / 2; // İçerik genişliğini ikiye bölerek klon dahil toplam uzunluğu al
         const marqueeWidth = marquee.offsetWidth;
 
-        if (
-          direction === "left" &&
-          Math.abs(currentPosition) > contentWidth + marqueeWidth
-        ) {
-          currentPosition = 0;
-        } else if (direction === "right" && currentPosition > marqueeWidth) {
-          currentPosition = -contentWidth;
+        // Pozisyonu sıfırlama koşullarını güncelle
+        if (direction === "left" && Math.abs(currentPosition) > contentWidth) {
+          currentPosition += contentWidth;
+        } else if (direction === "right" && currentPosition > 0) {
+          currentPosition -= marqueeWidth;
         }
 
         animationFrameId = requestAnimationFrame(moveMarquee);
@@ -65,7 +66,7 @@ const Marquee = React.forwardRef(
     return (
       <div
         className={cn(
-          "overflow-hidden whitespace-nowrap marquee-mask",
+          "overflow-hidden whitespace-nowrap marquee-mask flex h-full",
           className
         )}
         ref={marqueeRef}

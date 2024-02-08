@@ -20,12 +20,21 @@ module.exports = {
 
       // default breakpoints but with 40px removed
       screens: {
+        xs: "475px",
         sm: "640px",
         md: "768px",
         lg: "1024px",
         xl: "1280px",
         "2xl": "1400px",
       },
+    },
+    screens: {
+      xs: "475px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1400px",
     },
     extend: {
       colors: {
@@ -83,7 +92,7 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       transitionDuration: {
-        default: "200ms",
+        default: "50ms",
       },
     },
   },

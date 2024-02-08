@@ -10,10 +10,10 @@ import {
   FormLabel,
   FormControl,
   FormMessage,
-  FormDescription,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Heading } from "@/components/ui/heading";
 
 const contactFormSchema = z.object({
   email: z
@@ -24,17 +24,17 @@ const contactFormSchema = z.object({
     .min(1, {
       message: "Email is required",
     }),
-  name: z.string().min(1, { message: "İsim alanı boş bırakılamaz." }),
+  name: z.string().min(1, { message: "The name field cannot be empty." }),
   phone: z
     .string()
-    .min(10, { message: "Telefon numarası en az 10 karakter olmalıdır." })
+    .min(10, { message: "The phone number must be at least 10 digits long." })
     .regex(/^\d+$/, {
-      message: "Telefon numarası sadece rakamlardan oluşmalıdır.",
+      message: "The phone number must consist of numbers only.",
     }),
   message: z
     .string()
-    .min(1, { message: "Mesaj alanı boş bırakılamaz." })
-    .max(10, { message: "Mesajınız en fazla 255 karakter olabilir." }),
+    .min(1, { message: "Message field cannot be empty." })
+    .max(255, { message: "Your message can be up to 255 characters." }),
 });
 
 export default function Subscribe() {
@@ -56,80 +56,96 @@ export default function Subscribe() {
   }
 
   return (
-    <div className="flex-1 py-4">
-      <h1 className="scroll-m-20 text-3xl font-bold tracking-tight mb-4 px-4">
-        Contact Us
-      </h1>
-      <main className="">
-        <div className=" px-4 sm:px-0 sm:py-4">
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+    <>
+      <Heading level="h1" className="mb-4 px-4">
+        Bizimle iletişime geç
+      </Heading>
+      <div className=" p-4">
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field, _ }) => (
+                <FormItem className="flex-1 relative">
+                  <FormLabel>Ad</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Ad-soyad" {...field} />
+                  </FormControl>
+                  <FormMessage
+                    className="absolute left-0]"
+                    style={{ top: "calc(100% - 5px)" }}
+                  />
+                </FormItem>
+              )}
+            />
+            <div className="grid md:grid-cols-2 gap-x-2 gap-y-8">
               <FormField
                 control={form.control}
                 name="email"
                 render={({ field, _ }) => (
-                  <FormItem>
+                  <FormItem className="relative">
                     <FormLabel>Email</FormLabel>
                     <FormControl>
                       <Input placeholder="example@gmail.com" {...field} />
                     </FormControl>
-                    <FormMessage />
+                    <FormMessage
+                      className="absolute left-0]"
+                      style={{ top: "calc(100% - 5px)" }}
+                    />
                   </FormItem>
                 )}
               />
-              <div className="grid md:grid-cols-2 gap-x-2">
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field, _ }) => (
-                    <FormItem className="flex-1">
-                      <FormLabel>Name</FormLabel>
-                      <FormControl>
-                        <Input placeholder="Full name" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="phone"
-                  render={({ field, _ }) => (
-                    <FormItem className="flex-1">
-                      <FormLabel>Phone</FormLabel>
-                      <FormControl>
-                        <Input placeholder="5xx xxx xx xx" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </div>
               <FormField
                 control={form.control}
-                name="message"
+                name="phone"
                 render={({ field, _ }) => (
-                  <FormItem>
-                    <FormLabel>How can we help you?</FormLabel>
+                  <FormItem className="flex-1 relative">
+                    <FormLabel>
+                      Telefon (
+                      <span className="text-sm text-foreground/30">
+                        &nbsp;10 hane olarak&nbsp;
+                      </span>
+                      )
+                    </FormLabel>
                     <FormControl>
-                      <Textarea
-                        placeholder="Your message..."
-                        rows={5}
-                        className="resize-none	"
-                        {...field}
-                      />
+                      <Input placeholder="5xx xxx xx xx" {...field} />
                     </FormControl>
-                    <FormMessage />
+                    <FormMessage
+                      className="absolute left-0]"
+                      style={{ top: "calc(100% - 5px)" }}
+                    />
                   </FormItem>
                 )}
               />
-              <FormItem className="text-end">
-                <Button type="submit">Submit</Button>
-              </FormItem>
-            </form>
-          </Form>
-        </div>
-      </main>
-    </div>
+            </div>
+            <FormField
+              control={form.control}
+              name="message"
+              render={({ field, _ }) => (
+                <FormItem className="relative">
+                  <FormLabel>Size nasıl yardımcı olabiliriz?</FormLabel>
+                  <FormControl>
+                    <Textarea
+                      placeholder="Mesajınız..."
+                      rows={5}
+                      className="resize-none	"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage
+                    className="absolute left-0]"
+                    style={{ top: "calc(100% - 5px)" }}
+                  />
+                </FormItem>
+              )}
+            />
+            <FormItem className="text-end">
+              <Button type="submit">Gönder</Button>
+            </FormItem>
+          </form>
+        </Form>
+      </div>
+    </>
   );
 }

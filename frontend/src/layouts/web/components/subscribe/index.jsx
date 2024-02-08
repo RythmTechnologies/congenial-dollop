@@ -62,12 +62,12 @@ export default function Subscribe() {
                   </FormControl>
                   <FormControl>
                     <Button variant="outline" type="submit">
-                      Subscribe
+                      Abone Ol
                     </Button>
                   </FormControl>
                 </div>
                 <FormDescription>
-                  Subscribe to our newsletter not to miss the changes.
+                  Hiçbir değişikliği kaçırmamak için bültenimize katılın.
                 </FormDescription>
                 <FormMessage />
               </FormItem>

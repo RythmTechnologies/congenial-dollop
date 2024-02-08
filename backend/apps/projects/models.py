@@ -36,6 +36,20 @@ class Technologies(TimeBasedStampModel):
         return self.name
 
 # Project Technologies ORM End
+    
+
+# Project Category ORM Start
+class Category(TimeBasedStampModel):
+    name = models.CharField(("Proje Kategorisi"), max_length=50)
+
+    class Meta:
+        verbose_name = "Proje Kategori"
+        verbose_name_plural = "Proje Kategorileri"
+
+    def __str__(self) -> str:
+        return self.name
+
+# Project Category ORM End
 
 
 # Project Orm Start
@@ -47,6 +61,7 @@ class Project(TimeBasedStampModel):
     source = models.URLField(("Proje Url"), max_length=200, blank=True)
     technologies = models.ManyToManyField(Technologies, verbose_name=("Kullanılan Teknolojiler"))
     slug = AutoSlugField(populate_from="name", unique=True, editable=False, always_update=True, blank=True, slugify=custom_slugify)
+    category = models.ForeignKey(Category, verbose_name=("Proje Kategorisi"), blank=True, null=True, on_delete=models.CASCADE)
 
 
     def __str__(self) -> str:

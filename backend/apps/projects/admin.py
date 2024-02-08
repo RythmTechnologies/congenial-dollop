@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Project,Technologies
+from .models import Project,Technologies, Category
 
 class ProjectAdmin(admin.ModelAdmin):
     # Admin panelinde listelenen sütunlar
@@ -15,3 +15,4 @@ class ProjectAdmin(admin.ModelAdmin):
 
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(Technologies)
+admin.site.register(Category)

@@ -9,7 +9,7 @@ const About = lazy(() => import("@/pages/about"));
 const Contact = lazy(() => import("@/pages/contact"));
 const Home = lazy(() => import("@/pages/home"));
 const Blog = lazy(() => import("@/pages/blog"));
-const Works = lazy(() => import("@/pages/works"));
+const Academy = lazy(() => import("@/pages/academy"));
 
 const routes = createBrowserRouter([
   {
@@ -21,28 +21,28 @@ const routes = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/about",
+        path: "/hakkimizda",
         element: <About />,
       },
       {
-        path: "/blog",
+        path: "/topluluk/blog",
         element: <Blog />,
       },
       {
-        path: "/contact",
+        path: "/iletisim",
         element: <Contact />,
       },
       {
-        path: "/works",
-        element: <Works />,
+        path: "/rythm-akademi",
+        element: <Academy />,
       },
       {
-        path: "/projects",
+        path: "/projeler",
         element: <Projects />,
       },
 
       {
-        path: "/projects/:slug",
+        path: "/projeler/:slug",
         element: <ProjectDetail />,
       },
       {
