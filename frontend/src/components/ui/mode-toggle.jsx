@@ -24,26 +24,35 @@ export function ModeToggle() {
     {
       id: 0,
       value: "light",
+      title: "açık",
       icon: Sun,
     },
     {
       id: 1,
       value: "dark",
+      title: "koyu",
       icon: Moon,
     },
     {
       id: 2,
       value: "system",
+      title: "sistem",
       icon: Monitor,
     },
   ];
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
-          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 dark:rotate-0 dark:scale-100" />
+      <DropdownMenuTrigger title="Toggle theme" asChild>
+        <Button variant="ghost" size="icon">
+          <Sun
+            size={18}
+            className="rotate-0 scale-100 dark:-rotate-90 dark:scale-0"
+          />
+          <Moon
+            size={18}
+            className="absolute rotate-90 scale-0 dark:rotate-0 dark:scale-100"
+          />
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
@@ -55,10 +64,10 @@ export function ModeToggle() {
               onClick={() => handleTheme(theme.value)}
               className={cn(
                 activeTheme === theme.value && "bg-accent/40",
-                "gap-x-2"
+                "gap-x-2 cursor-pointer"
               )}
             >
-              {<theme.icon width="20" />} {theme.value}
+              {<theme.icon size={20} />} {theme.title}
             </DropdownMenuItem>
           );
         })}
