@@ -49,7 +49,7 @@ export default function Projects() {
               <div key={project.id} className="p-4 flex flex-col gap-2">
                 <a
                   href={`projeler/${project.slug}`}
-                  className=" rounded-lg h-auto xs:h-52 sm:h-44 md:h-40 overflow-hidden border-2  "
+                  className=" rounded-lg h-auto xs:h-52 sm:h-44 md:h-52 overflow-hidden border-2  "
                 >
                   <img
                     className="h-full w-full object-cover rounded"
