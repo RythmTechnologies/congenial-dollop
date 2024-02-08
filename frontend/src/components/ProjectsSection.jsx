@@ -76,12 +76,16 @@ export default function ProjectsSection() {
                   >
                     <Link
                       to={"/projeler/" + project.slug}
-                      className="h-40 xs:h-52 sm:h-44 md:h-52 flex-1 rounded-lg overflow-hidden border-2"
+                      className="rounded-lg overflow-hidden border-2"
                     >
                       <img
                         className="h-full w-full object-center object-contain rounded"
                         src={project.image}
                         alt={project.name}
+                        height={360}
+                        width={720}
+                        decoding="async"
+                        loading="lazy"
                       />
                     </Link>
                     <p className=" sm:text-center font-bold text-foreground">
