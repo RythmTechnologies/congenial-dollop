@@ -29,7 +29,6 @@ export function NavbarMobile() {
     () => data?.filter((navlink) => navlink.has_subs_links),
     [data]
   );
-  if (isLoading) return "dene";
 
   return (
     <NavigationMenu

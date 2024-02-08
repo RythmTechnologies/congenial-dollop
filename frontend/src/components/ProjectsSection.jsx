@@ -76,7 +76,7 @@ export default function ProjectsSection() {
                   >
                     <Link
                       to={"/projeler/" + project.slug}
-                      className="rounded-lg overflow-hidden border-2"
+                      className="flex-grow rounded-lg overflow-hidden border-2"
                     >
                       <img
                         className="h-full w-full object-center object-contain rounded"
