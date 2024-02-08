@@ -46,7 +46,7 @@ export default function ProjectDetail() {
 
   return (
     <>
-      <section className=" shadow-lg rounded-lg px-4 flex flex-col space-y-4">
+      <section className="  px-4 flex flex-col space-y-4">
         <Button
           className="flex items-center justify-center rounded-full  aspect-square"
           variant="ghost"
@@ -56,7 +56,7 @@ export default function ProjectDetail() {
           <ArrowLeftCircle />
         </Button>
 
-        <figure className="md:flex bg-gradient-to-r  from-muted to-background rounded-xl p-8 md:p-0 border border-border overflow-hidden">
+        <figure className="shadow-lg md:flex bg-gradient-to-r  from-muted to-background rounded-xl p-8 md:p-0 border border-border overflow-hidden">
           <img
             className="w-36 h-36 md:w-60 md:h-full rounded-full md:rounded-none  mx-auto md:mx-0 object-contain md:object-cover"
             src={project.image}
