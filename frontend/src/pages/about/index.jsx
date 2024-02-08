@@ -50,7 +50,7 @@ export default function About() {
             <CardTitle>Rythm Technologies</CardTitle>
             <CardDescription>2024-01-01</CardDescription>
           </CardHeader>
-          {data.map((about, key) => (
+          {data?.map((about, key) => (
             <CardContent
               key={key}
               className="p-4 border-b border-border/40 last:border-none"

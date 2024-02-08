@@ -12,7 +12,7 @@ body {
 
 .marquee-mask {
     @apply relative;
-    mask-image: linear-gradient(to right, transparent, hsl(var(--background)) 20%, hsl(var(--background)) 80%, transparent);
+    mask-image: linear-gradient(to right, transparent, hsl(var(--background)) 15%, hsl(var(--background)) 85%, transparent);
 }
 
 

@@ -140,7 +140,7 @@ export default function Subscribe() {
                 </FormItem>
               )}
             />
-            <FormItem className="text-end">
+            <FormItem className="text-start">
               <Button type="submit">Gönder</Button>
             </FormItem>
           </form>

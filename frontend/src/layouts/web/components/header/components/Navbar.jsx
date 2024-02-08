@@ -9,8 +9,6 @@ export default function Navbar({ children }) {
   const { data, error, isLoading } = useQuery({
     queryKey: ["navlinks"],
     queryFn: getNavlinks,
-    staleTime: 2 * 24 * 60 * 60 * 1000, // 2 gün
-    cacheTime: 2 * 24 * 60 * 60 * 1000, // 2 gün
   });
 
   const contextValue = useMemo(

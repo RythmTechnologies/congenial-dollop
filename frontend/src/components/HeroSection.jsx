@@ -1,5 +1,4 @@
 import hero from "@/assets/videos/hero.mp4";
-import { Heading } from "@/components/ui/heading";
 
 export default function HeroSection() {
   return (
@@ -14,13 +13,6 @@ export default function HeroSection() {
           playsInline={true}
         />
       </div>
-      {/* <div className="z-10 text-center px-8 drop-shadow-lg shadow-black">
-        <div className="uppercase text-sm mb-4">Welcome to</div>
-        <Heading level="h1" spacing="wide">
-          Rythm&nbsp;
-          <span className=" inline-flex">Technologies</span>
-        </Heading>
-      </div> */}
     </section>
   );
 }
