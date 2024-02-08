@@ -57,7 +57,7 @@ export function ModeToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        {themes.map((theme) => {
+        {themes?.map((theme) => {
           return (
             <DropdownMenuItem
               key={theme.id}

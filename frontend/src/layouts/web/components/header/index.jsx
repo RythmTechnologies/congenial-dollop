@@ -4,7 +4,6 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { CgMenuRightAlt } from "react-icons/cg";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/ui/mode-toggle";
-import { TechLogoComponent } from "@/components/icons";
 import useBreakpoints from "@/hooks/use-breakpoint";
 
 import Navbar from "./components/Navbar";
@@ -37,34 +36,6 @@ export default function Header() {
           </Navbar>
         </div>
         <div className="flex flex-1 items-center space-x-2 justify-end ">
-          {/* <Button variant="link" size="icon" className="p-0 ">
-            <Link
-              to="https://www.linkedin.com/company/rythmtechnologies/"
-              target="_blank"
-              title="Rythm Technologies Linkedin"
-              className="w-full h-full flex items-center justify-center bg-transparent"
-            >
-              <TechLogoComponent
-                logoName="Linkedin"
-                color="bg-primary"
-                size={18}
-              />
-            </Link>
-          </Button>
-          <Button variant="link" size="icon" className="p-0 ">
-            <Link
-              to="https://github.com/RythmTechnologies"
-              target="_blank"
-              title="Rythm Technologies GitHub"
-              className="w-full h-full flex items-center justify-center bg-transparent"
-            >
-              <TechLogoComponent
-                logoName="GitHub"
-                color="bg-primary"
-                size={18}
-              />
-            </Link>
-          </Button> */}
           <ModeToggle />
           {breakpoint == "mobile" && (
             <Sheet open={open} onOpenChange={() => setOpen(!open)}>
@@ -74,7 +45,7 @@ export default function Header() {
                   <span className="sr-only">Toggle Menur</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent className="w-full xs:max-w-sm">
+              <SheetContent className="w-full max-w-[80vw] xs:max-w-sm">
                 <SheetHeader>
                   <SheetTitle className="text-left flex items-center">
                     <NavLink>

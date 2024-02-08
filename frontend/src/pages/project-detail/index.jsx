@@ -18,7 +18,6 @@ export default function ProjectDetail() {
     queryFn: () => getProjectBySlug(slug),
   });
 
-  console.log(failureReason);
   if (isLoading) {
     return (
       <div className="px-4 pb-4 flex flex-col gap-y-4 w-full">
@@ -57,31 +56,31 @@ export default function ProjectDetail() {
           <ArrowLeftCircle />
         </Button>
 
-        <figure class="md:flex bg-gradient-to-r  from-muted to-background rounded-xl p-8 md:p-0 border border-border overflow-hidden">
+        <figure className="md:flex bg-gradient-to-r  from-muted to-background rounded-xl p-8 md:p-0 border border-border overflow-hidden">
           <img
-            class="w-36 h-36 md:w-60 md:h-full rounded-full md:rounded-none  mx-auto md:mx-0 object-cover md:object-cover"
+            className="w-36 h-36 md:w-60 md:h-full rounded-full md:rounded-none  mx-auto md:mx-0 object-contain md:object-cover"
             src={project.image}
             alt={project.name}
           />
-          <div class="flex-1 pt-6 md:p-8 text-center md:text-left space-y-4">
+          <div className="flex-1 pt-6 md:p-8 text-center md:text-left space-y-4">
             <blockquote>
               <Heading className="text-center md:text-left" level="h3">
                 “ {project.name} ”
               </Heading>
             </blockquote>
-            <figcaption class="font-medium">
-              <div class="text-sky-500 dark:text-sky-400">
+            <figcaption className="font-medium">
+              <div className="text-sky-500 dark:text-sky-400">
                 <Badge
                   className={
                     "pl-0 bg-gradient-to-r from-blue-600 to-indigo-200 inline-block text-transparent bg-clip-text text-2xl"
                   }
                 >
-                  {project.category.name}
+                  {project.category?.name}
                 </Badge>
               </div>
-              <div class="flex flex-wrap justify-center md:justify-start py-4 gap-x-4 gap-y-2">
-                {project.technologies?.map((tech) => (
-                  <div className="inline-flex gap-x-1 ">
+              <div className="flex flex-wrap justify-center md:justify-start py-4 gap-x-4 gap-y-2">
+                {project.technologies?.map((tech, key) => (
+                  <div key={key} className="inline-flex gap-x-1 ">
                     <TechLogoComponent
                       logoName={tech.name.replace(/\s/g, "")}
                       className="w-8 h-8"

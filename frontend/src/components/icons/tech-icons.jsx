@@ -7,6 +7,7 @@ import {
   BiLogoDjango as Django,
   BiLogoPostgresql as PostgreSQL,
 } from "react-icons/bi";
+import { VscJson as JSON } from "react-icons/vsc";
 
 import {
   SiGnubash as BashShell,
@@ -82,6 +83,7 @@ const icons = {
   Docker,
   Nginx,
   PM2,
+  JSON,
   Linkedin,
   DjangoRestFramework,
 };

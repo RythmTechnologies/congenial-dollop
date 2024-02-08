@@ -49,17 +49,17 @@ function TabsAbout({ data }) {
   return (
     <Tabs defaultValue={data[0]?.name}>
       <TabsList className="h-auto w-full grid grid-cols-1 xs:grid-cols-2  md:flex overflow-hidden">
-        {data.map((about, key) => (
+        {data?.map((about, key) => (
           <TabsTrigger
             key={about.id}
-            className="px-2 flex-1 transition-opacity justify-start md:justify-center"
+            className="px-4 py-2 md:px-2 md:py-1 flex-1 transition-opacity justify-start md:justify-center"
             value={about.name}
           >
             {about.name}
           </TabsTrigger>
         ))}
       </TabsList>
-      {data.map((about) => (
+      {data?.map((about) => (
         <TabsContent
           key={about.name}
           value={about.name}

@@ -49,7 +49,7 @@ export default function ProjectsSection() {
   }
 
   return (
-    <section className="flex-1 p-4 w-full">
+    <section className="flex-1 p-4 w-full" style={{ maxWidth: "100vw" }}>
       <Heading level="h2" className="mb-4">
         En son projelerimize göz atın
       </Heading>

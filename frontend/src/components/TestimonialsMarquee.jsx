@@ -1,4 +1,5 @@
 import { TechLogoComponent } from "./icons";
+import { Badge } from "./ui/badge";
 import { Heading } from "./ui/heading";
 import Marquee from "./ui/marquee";
 
@@ -61,7 +62,7 @@ export default function TestimonialsMarquee() {
       </Heading>
       <div className="w-screen sm:w-auto py-4 border-t border-border/40">
         <Marquee speed={0.5} direction="left">
-          {we.map((person) => (
+          {we?.map((person) => (
             <div
               key={person.id}
               className="block h-full min-w-max rounded-t-lg overflow-hidden relative"
@@ -71,8 +72,11 @@ export default function TestimonialsMarquee() {
                 alt={`${person.name} - ${person.title}`}
                 className="h-48 w-48 object-cover"
               />
-              <p className="absolute bottom-0 left-0 w-full h-16 font-bold tracking-normal leading-5 whitespace-nowrap flex items-center justify-center bg-gradient-to-t from-background via-background/60 to-transparent">
-                {person.name}
+              <p className="absolute bottom-0 left-0 w-full h-16 font-bold whitespace-nowrap flex flex-col items-center justify-center bg-background/40 backdrop-blur">
+                {person.name}{" "}
+                <Badge className={"bg-primary/80 backdrop-blur-md"}>
+                  {person.title}
+                </Badge>
               </p>
             </div>
           ))}

@@ -30,7 +30,6 @@ export const getNavlinks = async () => {
 export const getProjects = async () => {
   try {
     const response = await apiClient.get("/projects-api/projects");
-    console.log(response.data);
     return response.data;
   } catch (error) {
     throw handleError(error);
