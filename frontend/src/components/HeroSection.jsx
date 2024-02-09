@@ -9,6 +9,7 @@ export default function HeroSection() {
           loop="loop"
           playsInline={true}
         >
+          <track kind="Rythm Technologies hero video!"></track>
           <source
             src="https://rythm-tech-bucket.s3.eu-central-1.amazonaws.com/media/video/hero.webm"
             type="video/webm; codecs=vp9"

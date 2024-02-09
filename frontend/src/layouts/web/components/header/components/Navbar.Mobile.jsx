@@ -59,7 +59,6 @@ export function NavbarMobile() {
 }
 
 function MobileClassicLinks({ classicLinks }) {
-  console.log(classicLinks);
   return (
     <>
       {classicLinks?.map((navlink) => (
