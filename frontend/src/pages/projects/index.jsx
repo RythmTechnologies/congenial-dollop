@@ -6,6 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Spinner } from "@/components/spinner";
 import { Button } from "@/components/ui/button";
+import { Helmet } from "react-helmet-async";
 
 export default function Projects() {
   const { data, error, isLoading, refetch } = useQuery({
@@ -35,6 +36,10 @@ export default function Projects() {
 
   return (
     <>
+      <Helmet>
+        <title>Projeler</title>
+        <meta name="description" content={`Projeler desc!`} />
+      </Helmet>
       <Heading
         level="h1"
         className="scroll-m-20 text-3xl font-bold tracking-tight mb-4 px-4"
@@ -49,10 +54,10 @@ export default function Projects() {
               <div key={project.id} className="p-4 flex flex-col gap-2">
                 <a
                   href={`projeler/${project.slug}`}
-                  className=" rounded-lg h-auto xs:h-52 sm:h-44 md:h-52 overflow-hidden border-2  "
+                  className=" rounded-lg h-auto xs:h-52 md:h-52 overflow-hidden border  "
                 >
                   <img
-                    className="h-full w-full object-cover rounded"
+                    className="h-full w-full object-contain md:object-cover rounded"
                     src={project.image}
                     alt={project.name}
                   />

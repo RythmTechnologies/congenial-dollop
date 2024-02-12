@@ -14,6 +14,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Heading } from "@/components/ui/heading";
+import { Helmet } from "react-helmet-async";
 
 const contactFormSchema = z.object({
   email: z
@@ -57,6 +58,10 @@ export default function Subscribe() {
 
   return (
     <>
+      <Helmet>
+        <title>İletişim</title>
+        <meta name="description" content="Rythm Tecnologies iletişim desc!" />
+      </Helmet>
       <Heading level="h1" className="mb-4 px-4">
         Bizimle iletişime geç
       </Heading>
@@ -70,7 +75,11 @@ export default function Subscribe() {
                 <FormItem className="flex-1 relative">
                   <FormLabel>Ad</FormLabel>
                   <FormControl>
-                    <Input placeholder="Ad-soyad" {...field} />
+                    <Input
+                      placeholder="Ad-soyad"
+                      className="dark:border-border/40"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage
                     className="absolute left-0]"
@@ -87,7 +96,11 @@ export default function Subscribe() {
                   <FormItem className="relative">
                     <FormLabel>Email</FormLabel>
                     <FormControl>
-                      <Input placeholder="example@gmail.com" {...field} />
+                      <Input
+                        placeholder="example@gmail.com"
+                        className="dark:border-border/40"
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage
                       className="absolute left-0]"
@@ -109,7 +122,11 @@ export default function Subscribe() {
                       )
                     </FormLabel>
                     <FormControl>
-                      <Input placeholder="5xx xxx xx xx" {...field} />
+                      <Input
+                        placeholder="5xx xxx xx xx"
+                        className="dark:border-border/40"
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage
                       className="absolute left-0]"
@@ -129,7 +146,7 @@ export default function Subscribe() {
                     <Textarea
                       placeholder="Mesajınız..."
                       rows={5}
-                      className="resize-none	"
+                      className="resize-none dark:border-border/40"
                       {...field}
                     />
                   </FormControl>
