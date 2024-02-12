@@ -11,7 +11,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-import { BrandLogo } from "@/components/icons";
+import { BrandLogo } from "@/assets/icons";
 import { Link, NavLink } from "react-router-dom";
 import { cn } from "@/lib/utils";
 

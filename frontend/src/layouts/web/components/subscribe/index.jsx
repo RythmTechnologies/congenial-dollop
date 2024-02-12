@@ -46,7 +46,7 @@ export default function Subscribe() {
   }
 
   return (
-    <section className="w-full p-4 container mx-auto max-w-2xl border-x border-t border-border/40">
+    <section className="w-full p-4 container mx-auto max-w-2xl border-t sm:border-x border-border/40">
       <Form {...form}>
         <div>{form.formState.isSubmitting}</div>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -58,12 +58,15 @@ export default function Subscribe() {
                 <FormLabel>Email</FormLabel>
                 <div className="flex min-w-full max-w-sm items-center space-x-2 ">
                   <FormControl>
-                    <Input placeholder="example@gmail.com" {...field} />
+                    <Input
+                      className="border-border/40"
+                      placeholder="example@gmail.com"
+                      autoComplete="true"
+                      {...field}
+                    />
                   </FormControl>
                   <FormControl>
-                    <Button variant="outline" type="submit">
-                      Abone Ol
-                    </Button>
+                    <Button type="submit">Abone Ol</Button>
                   </FormControl>
                 </div>
                 <FormDescription>

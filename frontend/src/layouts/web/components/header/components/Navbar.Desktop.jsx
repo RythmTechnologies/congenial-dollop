@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/navigation-menu";
 
 import { Skeleton } from "@/components/ui/skeleton";
-import { BrandLogo } from "@/components/icons";
+import { BrandLogo } from "@/assets/icons";
 import { Link, NavLink } from "react-router-dom";
 import { ListItem } from "./ListItem";
 
