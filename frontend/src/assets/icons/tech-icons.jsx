@@ -37,6 +37,7 @@ import {
   SiNginx as Nginx,
   SiPm2 as PM2,
   SiLinkedin as Linkedin,
+  SiPhp as PHP,
 } from "react-icons/si";
 
 const DjangoRestFramework = ({ className, ...props }) => (
@@ -83,6 +84,7 @@ const icons = {
   Docker,
   Nginx,
   PM2,
+  PHP,
   JSON,
   Linkedin,
   DjangoRestFramework,
