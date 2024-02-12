@@ -17,6 +17,7 @@ export default defineConfig({
   build: {
     minify: true,
     manifest: true,
+    copyPublicDir: true,
     rollupOptions: {
       input: ["index.html"],
       output: {

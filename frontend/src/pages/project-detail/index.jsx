@@ -6,14 +6,15 @@ import { ArrowLeftCircle } from "lucide-react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Heading } from "@/components/ui/heading";
 import { Badge } from "@/components/ui/badge";
-import { TechLogoComponent } from "@/components/icons";
+import { TechLogoComponent } from "@/assets/icons";
 import { Card, CardDescription } from "@/components/ui/card";
+import { Helmet } from "react-helmet-async";
 
 export default function ProjectDetail() {
   const navigate = useNavigate();
   const { slug } = useParams();
 
-  const { data, error, isLoading, failureReason } = useQuery({
+  const { data, error, isLoading } = useQuery({
     queryKey: ["projects", slug],
     queryFn: () => getProjectBySlug(slug),
   });
@@ -46,6 +47,10 @@ export default function ProjectDetail() {
 
   return (
     <>
+      <Helmet>
+        <title> {project.name}</title>
+        <meta name="description" content={`${project.name} desc!`} />
+      </Helmet>
       <section className="  px-4 flex flex-col space-y-4">
         <Button
           className="flex items-center justify-center rounded-full  aspect-square"
@@ -58,7 +63,7 @@ export default function ProjectDetail() {
 
         <figure className="shadow-lg md:flex bg-gradient-to-r  from-muted to-background rounded-xl p-8 md:p-0 border border-border overflow-hidden">
           <img
-            className="w-36 h-36 md:w-60 md:h-full rounded-full md:rounded-none  mx-auto md:mx-0 object-contain md:object-cover"
+            className="w-36 h-36 md:w-60 md:h-full rounded-full md:rounded-none  mx-auto md:mx-0 object-contain md:object-contain"
             src={project.image}
             alt={project.name}
           />
@@ -72,7 +77,7 @@ export default function ProjectDetail() {
               <div className="text-sky-500 dark:text-sky-400">
                 <Badge
                   className={
-                    "pl-0 bg-gradient-to-r from-blue-600 to-indigo-200 inline-block text-transparent bg-clip-text text-2xl"
+                    "inline-flex py-0.5 leading-3 bg-gradient-to-r from-blue-600 to-indigo-200 text-transparent bg-clip-text text-2xl"
                   }
                 >
                   {project.category?.name}

@@ -33,7 +33,6 @@ export default function AboutSection() {
   return (
     <section className="flex-1 p-4 border-b border-border/40">
       <Heading level="h2" className="flex flex-wrap gap-x-4 mb-4">
-        Kısaca{" "}
         <div className="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">
           Rythm<span className="text-muted-foreground">Technologies</span>
         </div>
@@ -65,7 +64,7 @@ function TabsAbout({ data }) {
           value={about.name}
           className="transition-all mt-4"
         >
-          <Card>
+          <Card className="shadow-lg border-border/40">
             <CardHeader className="border-b border-border/40 p-4">
               <CardTitle>Rythm Technologies</CardTitle>
               <CardDescription>{about.date}</CardDescription>

@@ -1,4 +1,4 @@
-import { BrandLogo } from "@/components/icons/logo";
+import { BrandLogo } from "@/assets/icons/logo";
 import { Heading } from "@/components/ui/heading";
 import { Link } from "react-router-dom";
 

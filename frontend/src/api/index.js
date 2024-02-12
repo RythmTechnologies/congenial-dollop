@@ -44,3 +44,12 @@ export const getProjectBySlug = async (slug) => {
     throw handleError(error);
   }
 };
+
+export const getTeamMembers = async () => {
+  try {
+    const response = await apiClient.get("/teams-api/teams");
+    return response.data;
+  } catch (error) {
+    throw handleError(error);
+  }
+};

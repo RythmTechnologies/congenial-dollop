@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-
+import { Helmet } from "react-helmet-async";
 export default function About() {
   const { data, error, isLoading } = useQuery({
     queryKey: ["about"],
@@ -41,6 +41,10 @@ export default function About() {
 
   return (
     <>
+      <Helmet>
+        <title>Hakkımızda</title>
+        <meta name="description" content="Rythm Tecnologies hakkımızda desc!" />
+      </Helmet>
       <Heading level="h1" className="mb-4 px-4">
         Hakkımızda
       </Heading>
