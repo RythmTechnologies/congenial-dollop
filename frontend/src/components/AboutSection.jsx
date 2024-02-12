@@ -44,6 +44,13 @@ export default function AboutSection() {
   );
 }
 
+const icons = [
+  { icon: "💡", name: "Biz Kimiz?" },
+  { icon: "🚀", name: "Misyonumuz" },
+  { icon: "🌟", name: "Hizmetlerimiz" },
+  { icon: "🔗", name: "Neden Rythm Technologies?" },
+];
+
 function TabsAbout({ data }) {
   return (
     <Tabs defaultValue={data[0]?.name}>
@@ -54,6 +61,8 @@ function TabsAbout({ data }) {
             className="px-4 py-2 md:px-2 md:py-1 flex-1 transition-opacity justify-start md:justify-center"
             value={about.name}
           >
+            {icons.find((item) => item.name === about.name)?.icon}
+            &nbsp;
             {about.name}
           </TabsTrigger>
         ))}
