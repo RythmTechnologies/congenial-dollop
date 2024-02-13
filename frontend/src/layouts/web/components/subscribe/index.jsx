@@ -66,7 +66,13 @@ export default function Subscribe() {
                     />
                   </FormControl>
                   <FormControl>
-                    <Button type="submit">Abone Ol</Button>
+                    <Button
+                      id=":r8-btn:-form-item"
+                      aria-describedby=":r8-btn:-form-item-description"
+                      type="submit"
+                    >
+                      Abone Ol
+                    </Button>
                   </FormControl>
                 </div>
                 <FormDescription>
