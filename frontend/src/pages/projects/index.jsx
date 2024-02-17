@@ -38,7 +38,10 @@ export default function Projects() {
     <>
       <Helmet>
         <title>Projeler</title>
-        <meta name="description" content={`Projeler desc!`} />
+        <meta
+          name="description"
+          content="Projelerimiz: RythmTechnologies olarak müşterilerimizin ihtiyaçlarına yönelik web, masaüstü ve mobil uygulama projelerimizi inceleyin. Gerçek çözümler, somut sonuçlar."
+        />
       </Helmet>
       <Heading
         level="h1"

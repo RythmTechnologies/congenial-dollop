@@ -60,7 +60,10 @@ export default function Subscribe() {
     <>
       <Helmet>
         <title>İletişim</title>
-        <meta name="description" content="Rythm Tecnologies iletişim desc!" />
+        <meta
+          name="description"
+          content="İletişim: RythmTechnologies ile bugün iletişime geçin. Yazılım çözümlerimiz ve dijital dönüşüm projeleriniz için uzman ekibimizle görüşün."
+        />
       </Helmet>
       <Heading level="h1" className="mb-4 px-4">
         Bizimle iletişime geç

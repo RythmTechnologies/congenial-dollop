@@ -49,7 +49,10 @@ export default function ProjectDetail() {
     <>
       <Helmet>
         <title> {project.name}</title>
-        <meta name="description" content={`${project.name} desc!`} />
+        <meta
+          name="description"
+          content={`${project.name} Projemize Bakış: RythmTechnologies, her bir projesinde müşteri beklentilerini aşmayı ve sürdürülebilir çözümler sunmayı hedefler. Projemizin özelliklerini ve yaklaşımımızı keşfedin."`}
+        />
       </Helmet>
       <section className="  px-4 flex flex-col space-y-4">
         <Button

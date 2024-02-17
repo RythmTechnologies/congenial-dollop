@@ -43,7 +43,10 @@ export default function About() {
     <>
       <Helmet>
         <title>Hakkımızda</title>
-        <meta name="description" content="Rythm Tecnologies hakkımızda desc!" />
+        <meta
+          name="description"
+          content="RythmTechnologies hakkında: Teknoloji ve sanatı birleştiren özelleştirilmiş yazılım çözümleriyle, dijital dönüşüm yolculuğunuzda güvenilir partneriniz."
+        />
       </Helmet>
       <Heading level="h1" className="mb-4 px-4">
         Hakkımızda
