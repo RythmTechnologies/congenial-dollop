@@ -64,7 +64,7 @@ export default function ProjectsSection() {
           onMouseLeave={plugin.current.reset}
         >
           <CarouselContent>
-            {projects?.map((project, index) => (
+            {projects?.slice(0, 4)?.map((project, index) => (
               <CarouselItem
                 key={index}
                 className=" sm:basis-1/2 min-h-full flex-grow"
