@@ -6,7 +6,10 @@ export default function Blog() {
     <>
       <Helmet>
         <title>Rythm Blog</title>
-        <meta name="description" content="Rythm Blog desc!" />
+        <meta
+          name="description"
+          content="Yakında: RythmTechnologies blog sayfası çok yakında sizlerle. En güncel teknoloji haberleri, yazılım geliştirme trendleri ve dijital dönüşüm stratejileri için takipte kalın."
+        />
       </Helmet>
       <Heading
         level="h1"

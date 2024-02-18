@@ -25,7 +25,7 @@ export default function WebLayout() {
       <Header />
       <main className="flex-1 grid">
         {location.pathname === "/" && <HeroSection />}
-        <div className="flex-1 flex flex-col  container p-0 pt-4 sm:mx-auto border-x border-border/40 max-w-2xl">
+        <div className="flex-1 flex flex-col  container p-0 pt-4 sm:mx-auto sm:border-x border-border/40 max-w-2xl">
           <Outlet />
         </div>
       </main>
