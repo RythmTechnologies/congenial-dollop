@@ -54,7 +54,7 @@ export default function Projects() {
         <article className="grid grid-cols-1 md:grid-cols-2">
           {data &&
             projects?.map((project) => (
-              <div key={project.id} className="py-4 flex flex-col gap-2">
+              <div key={project.id} className="p-4 flex flex-col gap-2">
                 <a
                   href={`projeler/${project.slug}`}
                   className=" rounded-lg h-auto xs:h-52 md:h-52 overflow-hidden border  "
