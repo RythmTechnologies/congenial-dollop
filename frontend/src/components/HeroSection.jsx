@@ -11,7 +11,7 @@ export default function HeroSection() {
         >
           <track kind="Rythm Technologies hero video!"></track>
           <source
-            src="https://rythm-tech-bucket.s3.eu-central-1.amazonaws.com/media/video/hero.webm"
+            src="https://lastfloors-development.s3.eu-west-1.amazonaws.com/media/projects/202402020047.webm"
             type="video/webm; codecs=vp9"
           />
         </video>
